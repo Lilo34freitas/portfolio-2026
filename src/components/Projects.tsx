@@ -245,7 +245,7 @@ export default function Projects() {
         "--dt-left": "0%",
         "--dt-width": "50%",
         "--dt-height": "100%"
-      } as React.CSSProperties;
+      } as any;
     }
 
     // Cards inativos ficam na grade da direita (Bento Grid 2x3)
@@ -268,7 +268,7 @@ export default function Projects() {
       "--dt-left": slot.left,
       "--dt-width": slot.width,
       "--dt-height": slot.height
-    } as React.CSSProperties;
+    } as any;
   };
 
   return (
