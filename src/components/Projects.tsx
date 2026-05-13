@@ -334,7 +334,7 @@ export default function Projects() {
                   overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
-                }}
+                } as any}
                 whileHover={!isActive ? { borderColor: "#6C5CE7", boxShadow: "0 4px 20px rgba(108,92,231,0.2)" } : {}}
               >
                 <AnimatePresence mode="wait">
