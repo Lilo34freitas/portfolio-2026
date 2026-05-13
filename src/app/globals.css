@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   GLOBAL STYLES — Scrollytelling LP
+   Background: #050505 pure dark mode
+   ======================================== */
+
+:root {
+  --color-brand-dark: #050505;
+  --color-brand-cyan: #00E5FF;
+  --color-brand-magenta: #FF00E5;
+  --color-brand-cyan-glow: rgba(0, 229, 255, 0.35);
+  --color-brand-magenta-glow: rgba(255, 0, 229, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+  /* Framer Motion handles smooth scroll */
+}
+
+body {
+  background: radial-gradient(ellipse at 10% 10%, #1a0f1f 0%, #05070c 40%, #02030a 100%);
+  color: #e5e7eb;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Body scroll lock during preloader */
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Custom Scrollbar hidden for immersion */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 229, 255, 0.3);
+  color: #ffffff;
+}
+
+/* ========================================
+   PRELOADER BLOBS 
+   ======================================== */
+
+.preloader-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.preloader-blob--cyan {
+  background: radial-gradient(circle,
+      rgba(0, 229, 255, 0.6) 0%,
+      rgba(0, 229, 255, 0.1) 60%,
+      transparent 100%);
+}
+
+.preloader-blob--magenta {
+  background: radial-gradient(circle,
+      rgba(255, 0, 229, 0.5) 0%,
+      rgba(255, 0, 229, 0.1) 60%,
+      transparent 100%);
+}
+
+.preloader-blob--mixed {
+  background: radial-gradient(circle,
+      rgba(128, 114, 255, 0.4) 0%,
+      rgba(0, 229, 255, 0.15) 50%,
+      transparent 100%);
+}
+
+/* ========================================
+   TEXT OVERLAY STYLES 
+   ======================================== */
+
+.overlay-text {
+  text-shadow:
+    0 0 40px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.overlay-text--glow-cyan {
+  text-shadow:
+    0 0 20px var(--color-brand-cyan-glow),
+    0 0 60px rgba(0, 229, 255, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.overlay-text--glow-magenta {
+  text-shadow:
+    0 0 20px var(--color-brand-magenta-glow),
+    0 0 60px rgba(255, 0, 229, 0.15),
+    0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* ========================================
+   NAVBAR GLASSMORPHISM  
+   ======================================== */
+
+.navbar-glass {
+  background: rgba(5, 5, 5, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ========================================
+   CANVAS CONTAINER
+   ======================================== */
+
+.canvas-container canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* ========================================
+   UTILITY ANIMATIONS
+   ======================================== */
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.1) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Progress bar track */
+.progress-track {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg,
+      var(--color-brand-cyan),
+      var(--color-brand-magenta),
+      var(--color-brand-cyan));
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+  border-radius: 100px;
+  height: 100%;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
