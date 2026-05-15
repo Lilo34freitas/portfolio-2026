@@ -86,7 +86,7 @@ const Card = ({ item, index, progress }: { item: typeof EXP_DATA[0]; index: numb
 
   return (
     <motion.div
-      className="absolute inset-0 w-full h-full flex flex-col justify-start pt-[18vh] pb-8 lg:justify-end lg:pt-0 lg:pb-16 xl:pb-24 px-6 md:px-12 xl:px-24"
+      className="absolute inset-0 w-full h-full flex flex-col justify-start pt-[18vh] pb-[4vh] lg:justify-end lg:pt-0 lg:pb-[8vh] xl:pb-[10vh] px-6 md:px-12 xl:px-24"
       style={{
         backgroundColor: item.color,
         clipPath: index === 0 ? "none" : clipPath,
@@ -104,8 +104,8 @@ const Card = ({ item, index, progress }: { item: typeof EXP_DATA[0]; index: numb
         </div>
 
         {/* Centro: Imagem */}
-        <div className="flex-1 flex justify-center items-center w-full py-4 lg:py-0 lg:pb-8">
-          <div className="relative w-full max-w-[320px] md:max-w-[280px] lg:max-w-none lg:w-[260px] xl:w-[380px] aspect-square shadow-2xl overflow-hidden bg-white/5 border border-white/5 rounded-sm mx-auto">
+        <div className="flex-1 flex justify-center items-center w-full py-4 lg:py-0 lg:pb-[4vh]">
+          <div className="relative h-[25vh] md:h-[30vh] lg:h-[35vh] xl:h-[42vh] max-h-[380px] aspect-square shadow-2xl overflow-hidden bg-white/5 border border-white/5 rounded-sm mx-auto">
             <Image 
               src={item.image} 
               alt={item.company} 
@@ -152,8 +152,8 @@ export default function Experience() {
       <div className="sticky top-0 w-full h-[100vh] overflow-hidden bg-[#181528]">
         
         {/* Título Principal Fixo no Fundo/Topo */}
-        <div className="absolute top-[8%] md:top-[8%] lg:top-12 xl:top-20 left-0 w-full text-center z-50 pointer-events-none opacity-90">
-          <h2 className="font-bebas uppercase text-[4rem] md:text-[5rem] lg:text-[7rem] xl:text-[10rem] leading-none text-white tracking-tight transition-colors duration-200" style={{ textShadow: "1px 1px 0px #000, 2px 2px 0px #000, 3px 3px 0px #000, 4px 4px 0px #00D2FF, 5px 5px 0px #00D2FF, 6px 6px 0px #00D2FF" }}>
+        <div className="absolute top-[6vh] md:top-[8vh] lg:top-[8vh] left-0 w-full text-center z-50 pointer-events-none opacity-90">
+          <h2 className="font-bebas uppercase text-[12vh] md:text-[14vh] lg:text-[16vh] xl:text-[18vh] leading-none text-white tracking-tight transition-colors duration-200" style={{ textShadow: "1px 1px 0px #000, 2px 2px 0px #000, 3px 3px 0px #000, 4px 4px 0px #00D2FF, 5px 5px 0px #00D2FF, 6px 6px 0px #00D2FF" }}>
             <BlockRevealText delay={0}>Trajetória</BlockRevealText>
           </h2>
         </div>
