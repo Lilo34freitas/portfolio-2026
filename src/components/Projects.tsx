@@ -216,11 +216,20 @@ function CardCollapsed({ p }: { p: Project }) {
       <div>
         <div style={{ marginBottom: 14 }}>{getIcon(p.id, p.accent)}</div>
         <h4 className="font-bebas uppercase"
-          style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.7rem)", color: "#ffffff", lineHeight: 1.1, letterSpacing: "0.02em" }}>
+          style={{ 
+            fontSize: "clamp(1.1rem, 1.4vw, 1.5rem)", 
+            color: "#ffffff", 
+            lineHeight: 1.1, 
+            letterSpacing: "0.02em",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden"
+          }}>
           {p.title}
         </h4>
       </div>
-      <div style={{ width: 44, height: 44, borderRadius: "50%", border: `1.5px solid ${p.accent}60`, display: "flex", alignItems: "center", justifyContent: "center", color: p.accent }}>
+      <div style={{ width: 44, height: 44, borderRadius: "50%", border: `1.5px solid ${p.accent}60`, display: "flex", alignItems: "center", justifyContent: "center", color: p.accent, flexShrink: 0 }}>
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M8 2V14M2 8H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
         </svg>
@@ -236,14 +245,13 @@ const DURATION = 0.7;
 export default function Projects() {
   const [activeId, setActiveId] = useState(1);
 
-  // Calcula a posição absoluta de cada card usando variáveis CSS
   const getDesktopStyles = (id: number) => {
-    // Se for o card ativo, ocupa a esquerda inteira
+    // Se for o card ativo, ocupa a esquerda
     if (id === activeId) {
       return {
         "--dt-top": "0%",
         "--dt-left": "0%",
-        "--dt-width": "50%",
+        "--dt-width": "44%",
         "--dt-height": "100%"
       } as any;
     }
@@ -252,13 +260,13 @@ export default function Projects() {
     const inactiveIds = PROJECTS.map(p => p.id).filter(i => i !== activeId);
     const index = inactiveIds.indexOf(id);
 
-    // Slots para os 5 inativos no lado direito
+    // Slots para os 5 inativos no lado direito (56% restantes, com pequenos gaps)
     const INACTIVE_SLOTS = [
-      { top: "0%", left: "52%", width: "23%", height: "31%" },
-      { top: "0%", left: "77%", width: "23%", height: "31%" },
-      { top: "33.5%", left: "52%", width: "23%", height: "31%" },
-      { top: "33.5%", left: "77%", width: "23%", height: "31%" },
-      { top: "67%", left: "52%", width: "48%", height: "33%" }, // Spans both cols
+      { top: "0%", left: "46%", width: "26%", height: "32%" },
+      { top: "0%", left: "74%", width: "26%", height: "32%" },
+      { top: "34%", left: "46%", width: "26%", height: "32%" },
+      { top: "34%", left: "74%", width: "26%", height: "32%" },
+      { top: "68%", left: "46%", width: "54%", height: "32%" }, // Spans both cols
     ];
 
     const slot = INACTIVE_SLOTS[index];
@@ -286,10 +294,10 @@ export default function Projects() {
           height: auto;
           min-height: 250px;
         }
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
           .project-card-container {
             display: block;
-            height: 750px; /* Altura aumentada para comportar 6 itens */
+            height: clamp(650px, 85vh, 800px);
           }
           .project-card {
             position: absolute;
@@ -328,7 +336,7 @@ export default function Projects() {
                   background: isActive ? "#1A1A2E" : "#13111C",
                   border: isActive ? `2px solid ${p.accent}` : "1.5px solid #2A2A40",
                   borderRadius: 24,
-                  padding: isActive ? "40px" : "24px",
+                  padding: isActive ? "clamp(24px, 4vw, 40px)" : "clamp(16px, 2vw, 24px)",
                   cursor: isActive ? "default" : "pointer",
                   boxShadow: isActive ? "0 8px 48px rgba(108,92,231,0.15)" : "none",
                   overflow: "hidden",

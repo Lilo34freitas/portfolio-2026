@@ -39,11 +39,11 @@ export default function Contact() {
     <section 
       ref={containerRef}
       id="contato" 
-      className="relative w-full h-[100svh] md:h-[90vh] overflow-hidden z-10 bg-[#0D0B1A]"
+      className="relative w-full h-[100svh] min-h-[650px] md:min-h-[700px] xl:min-h-[800px] overflow-hidden z-10 bg-[#0D0B1A]"
     >
       <motion.div 
         style={{ y }}
-        className="absolute inset-0 w-full h-full bg-[#EAF3FF] text-[#050505] flex flex-col p-12 sm:p-14 md:p-20 lg:p-24"
+        className="absolute inset-0 w-full h-full bg-[#EAF3FF] text-[#050505] flex flex-col p-6 sm:p-10 md:p-12 lg:p-16 xl:p-20"
       >
         {/* =====================
             FRAME MARQUEE BORDERS
@@ -74,12 +74,12 @@ export default function Contact() {
         {/* =====================
             MAIN CONTENT
             ===================== */}
-        <div className="relative z-10 flex flex-col lg:flex-row justify-between w-full items-center lg:items-start flex-1 mt-4 md:mt-10 gap-8 sm:gap-16 lg:gap-12">
+        <div className="relative z-10 flex flex-col lg:flex-row justify-between w-full items-center lg:items-start flex-1 mt-4 md:mt-8 gap-6 sm:gap-12 lg:gap-8">
           
           {/* Left Side: Huge Text + Animated Circle Button Inline */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-0 min-w-0">
             <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-4 md:gap-8">
-              <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[6.5rem] lg:text-[7.5rem] xl:text-[8.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505]">
+              <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[4.5rem] xl:text-[6.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505] break-words">
                 Vamos
               </h2>
               <a 
@@ -92,14 +92,14 @@ export default function Contact() {
                  <FiArrowUpRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 text-[#050505] group-hover:text-[#EAF3FF] relative z-10 transition-colors duration-500" />
               </a>
             </div>
-            <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[6.5rem] lg:text-[7.5rem] xl:text-[8.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505]">
+            <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[4.5rem] xl:text-[6.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505] break-words">
               Conversar
             </h2>
           </div>
 
           {/* Right Side: Copy & Contacts */}
-          <div className="flex flex-col gap-6 sm:gap-10 md:gap-12 max-w-sm xl:max-w-md w-full shrink-0 text-center lg:text-left items-center lg:items-start lg:ml-auto lg:pt-4">
-            <p className="text-base sm:text-lg md:text-xl xl:text-2xl font-medium leading-relaxed text-[#050505]/90">
+          <div className="flex flex-col gap-6 sm:gap-8 md:gap-10 max-w-sm xl:max-w-md w-full shrink-0 text-center lg:text-left items-center lg:items-start lg:ml-auto lg:pt-4">
+            <p className="text-base sm:text-lg md:text-xl font-medium leading-relaxed text-[#050505]/90">
               Se você busca alguém com visão prática, organização obstinada e foco massivo em melhoria contínua, dê o primeiro passo.
             </p>
             
@@ -139,10 +139,10 @@ export default function Contact() {
         {/* =====================
             HUGE BOTTOM TEXT (Shimmer Text)
             ===================== */}
-        <div className="relative z-10 w-full flex justify-center lg:justify-start items-end mt-auto pointer-events-none select-none pb-4 md:pb-0 md:-translate-y-[4%] lg:-translate-y-[6%]">
+        <div className="relative z-10 w-full flex justify-center lg:justify-start items-end mt-auto pointer-events-none select-none pb-2 md:pb-0 md:-translate-y-[2%] lg:-translate-y-[4%]">
            <ShimmerText 
              text="MURILO" 
-             className="font-display font-black text-[18vw] sm:text-[19vw] md:text-[20vw] lg:text-[21vw] leading-none tracking-tighter" 
+             className="font-display font-black text-[18vw] sm:text-[18vw] md:text-[16vw] lg:text-[14vw] xl:text-[17vw] leading-none tracking-tighter" 
              baseColor="#050505" 
              shimmerColor="#ffffff"
            />
