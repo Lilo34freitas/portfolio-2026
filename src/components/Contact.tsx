@@ -79,20 +79,20 @@ export default function Contact() {
           {/* Left Side: Huge Text + Animated Circle Button Inline */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left gap-0 min-w-0">
             <div className="flex flex-col md:flex-row items-center justify-center lg:justify-start gap-4 md:gap-8">
-              <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[4.5rem] xl:text-[6.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505] break-words">
+              <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[6.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505] break-words">
                 Vamos
               </h2>
               <a 
                 href="https://w.app/fuhzqg" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="group relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-full border-[2px] border-[#050505] overflow-hidden transition-all duration-500 hover:scale-105 flex-shrink-0"
+                className="group relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-20 md:h-20 lg:w-28 lg:h-28 rounded-full border-[2px] border-[#050505] overflow-hidden transition-all duration-500 hover:scale-105 flex-shrink-0"
               >
                  <span className="absolute inset-0 bg-[#050505] translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease-[0.22,1,0.36,1] rounded-full" />
-                 <FiArrowUpRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 text-[#050505] group-hover:text-[#EAF3FF] relative z-10 transition-colors duration-500" />
+                 <FiArrowUpRight className="w-8 h-8 sm:w-10 sm:h-10 md:w-10 md:h-10 lg:w-14 lg:h-14 text-[#050505] group-hover:text-[#EAF3FF] relative z-10 transition-colors duration-500" />
               </a>
             </div>
-            <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[5rem] lg:text-[4.5rem] xl:text-[6.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505] break-words">
+            <h2 className="font-display font-black text-[3.2rem] sm:text-[4.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[6.5rem] leading-[0.85] tracking-tighter uppercase text-[#050505] break-words">
               Conversar
             </h2>
           </div>
@@ -142,7 +142,7 @@ export default function Contact() {
         <div className="relative z-10 w-full flex justify-center lg:justify-start items-end mt-auto pointer-events-none select-none pb-2 md:pb-0 md:-translate-y-[2%] lg:-translate-y-[4%]">
            <ShimmerText 
              text="MURILO" 
-             className="font-display font-black text-[18vw] sm:text-[18vw] md:text-[16vw] lg:text-[14vw] xl:text-[17vw] leading-none tracking-tighter" 
+             className="font-display font-black text-[18vw] sm:text-[18vw] md:text-[15vw] lg:text-[14vw] xl:text-[17vw] leading-none tracking-tighter" 
              baseColor="#050505" 
              shimmerColor="#ffffff"
            />

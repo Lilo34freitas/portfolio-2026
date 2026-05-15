@@ -260,7 +260,7 @@ export default function Projects() {
     const inactiveIds = PROJECTS.map(p => p.id).filter(i => i !== activeId);
     const index = inactiveIds.indexOf(id);
 
-    // Slots para os 5 inativos no lado direito (56% restantes, com pequenos gaps)
+    // Slots para os 5 inativos no lado direito
     const INACTIVE_SLOTS = [
       { top: "0%", left: "46%", width: "26%", height: "32%" },
       { top: "0%", left: "74%", width: "26%", height: "32%" },
@@ -294,10 +294,10 @@ export default function Projects() {
           height: auto;
           min-height: 250px;
         }
-        @media (min-width: 1024px) {
+        @media (min-width: 768px) {
           .project-card-container {
             display: block;
-            height: clamp(650px, 85vh, 800px);
+            height: clamp(600px, 80vh, 750px);
           }
           .project-card {
             position: absolute;
@@ -306,6 +306,7 @@ export default function Projects() {
             width: var(--dt-width);
             height: var(--dt-height);
             margin-bottom: 0;
+            min-height: 0;
           }
         }
       `}</style>
