@@ -49,12 +49,12 @@ const aerosol = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Murilo Freitas — Creative Developer & Digital Craftsman",
+  title: "Murilo Freitas",
   description:
     "Portfolio of Murilo Freitas. A scrollytelling experience showcasing creative development, precision engineering, and digital craftsmanship.",
   keywords: ["Murilo Freitas", "creative developer", "portfolio", "scrollytelling"],
   openGraph: {
-    title: "Murilo Freitas — Creative Developer",
+    title: "Murilo Freitas",
     description: "A scrollytelling portfolio experience.",
     type: "website",
   },
